@@ -178,7 +178,8 @@
 
     // CSV format expected: name,price,link,category,images(separated by | or ,)  (header optional)
     function importCSV(text){
-      const rows = text.split(/?
+      const rows = text.split(/
+?
 /).map(r=>r.trim()).filter(Boolean);
       let start = 0; if(rows[0].toLowerCase().startsWith('name,')) start = 1;
       const list = loadProducts();
